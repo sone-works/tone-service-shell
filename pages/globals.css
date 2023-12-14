@@ -2,6 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .bg-global {
+    @apply bg-[var(--global-lighter)] dark:bg-[var(--global-darker)];
+  }
+
+  .bg-global-flipped {
+    @apply bg-[var(--global-darker)] dark:bg-[var(--global-lighter)];
+  }
+
+  .text-global {
+    @apply text-[var(--global-darker)] dark:text-[var(--global-lighter)];
+  }
+
+  .text-global-flipped {
+    @apply text-[var(--global-lighter)] dark:text-[var(--global-darker)];
+  }
+
+  .border-global {
+    @apply border-[var(--global-darker)] dark:border-[var(--global-lighter)];
+  }
+
+  .border-global-flipped {
+    @apply border-[var(--global-lighter)] dark:border-[var(--global-darker)];
+  }
+}
+
 html,
 body,
 #__next {
