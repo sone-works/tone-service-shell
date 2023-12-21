@@ -3,7 +3,7 @@ import Script from 'next/script'
 
 export default function CustomDocument() {
   return (
-    <Html className="h-full w-full">
+    <Html>
       <Head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />

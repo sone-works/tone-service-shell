@@ -3,9 +3,11 @@ import type { Config } from 'tailwindcss'
 
 const config: Config = {
   content: [
+    './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './node_modules/@sone-dao/**/dist/*.{js,ts,jsx,tsx,mdx}',
+    './node_modules/@sone-dao/tone-react-page-signup/dist/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     fontFamily: {
