@@ -13,7 +13,7 @@
     "@module-federation/nextjs-mf": "^7.0.8",
     "@sone-dao/sone-react-utils": "^1.0.1",
     "@sone-dao/tone-react-debug": "^0.1.0",
-    "@sone-dao/tone-react-nav-menu": "^0.6.1",
+    "@sone-dao/tone-react-nav-menu": "^0.7.0",
     "@sone-dao/tone-react-page-home": "latest",
     "@sone-dao/tone-react-page-signup": "^1.0.3",
     "@sone-dao/tone-react-page-upload": "^0.2.1",

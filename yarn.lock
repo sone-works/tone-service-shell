@@ -2038,10 +2038,10 @@
   resolved "https://registry.yarnpkg.com/@sone-dao/tone-react-debug/-/tone-react-debug-0.1.0.tgz#e03fdcca805c882392ac775cf72e3f6ca0126a26"
   integrity sha512-ICA0PAg7+LlvUo7+dAbIqnpKsoxuI7+TdPM/1kK2/LBFpF06r0KWKmkJ+VtHZrfcYLGyB3M2HQ49CCo43z412w==
 
-"@sone-dao/tone-react-nav-menu@^0.6.1":
-  version "0.6.1"
-  resolved "https://registry.yarnpkg.com/@sone-dao/tone-react-nav-menu/-/tone-react-nav-menu-0.6.1.tgz#a602b5b0d7cffc2049635a026cda5d722c642f8d"
-  integrity sha512-iXXhjhk4epyRahKZL//9TEmiOujQ/Emqi3ztIbi4SX4EHgZl8ocgNE+f4/w8kWVt+QecJnvaW3iYqWk7uUx35w==
+"@sone-dao/tone-react-nav-menu@^0.7.0":
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/@sone-dao/tone-react-nav-menu/-/tone-react-nav-menu-0.7.0.tgz#de9231a9772025adbd9b0a6f92b731349c341531"
+  integrity sha512-MEUkrzd0DACanA55shXuFmoF4Mnh5sNzfDOohExEmd9fnbcbHkaJ4Rhu468FGObESLqRjgKmQhRIbuKbpiQzbg==
   dependencies:
     "@sone-dao/sone-react-utils" "^1.0.1"
     "@sone-dao/tone-react-core-ui" "2.7.0"
