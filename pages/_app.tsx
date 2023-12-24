@@ -40,8 +40,8 @@ export default function App({ Component, pageProps, router }: AppProps) {
         <title>Tone</title>
       </Head>
       <Providers>
-        <div className="min-h-screen h-full w-full flex flex-col">
-          {<NavMenu user={user} />}
+        <div className="max-h-screen h-screen w-full flex flex-col overflow-hidden">
+          <NavMenu user={user} />
           <Component {...pageProps} />
         </div>
       </Providers>
