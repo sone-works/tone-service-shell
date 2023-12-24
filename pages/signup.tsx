@@ -1,3 +1,11 @@
-import SignupPage from '@sone-dao/tone-react-page-signup'
+import { Suspense, lazy } from 'react'
 
-export default SignupPage
+export default function (pageProps: any) {
+  const SignupPageProd = lazy(() => import('@sone-dao/tone-react-page-signup'))
+
+  return (
+    <Suspense fallback={<></>}>
+      <SignupPageProd {...pageProps} />
+    </Suspense>
+  )
+}

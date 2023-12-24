@@ -1,25 +1,21 @@
 import Providers from '@/components/Providers'
 import ToneCSSUtils from '@/utils/css'
-import debug from '@sone-dao/tone-react-debug'
+import { win } from '@sone-dao/sone-react-utils'
 import NavMenu from '@sone-dao/tone-react-nav-menu'
 import useStyleStore from '@sone-dao/tone-react-style-store'
 import useUserStore from '@sone-dao/tone-react-user-store'
 import { getRandomAAColor, randomColor } from 'accessible-colors'
 import localforage from 'localforage'
-import type { AppProps } from 'next/app'
+import { AppProps } from 'next/app'
 import Head from 'next/head'
-import { useSearchParams } from 'next/navigation'
 import { useEffect } from 'react'
 import './globals.css'
 
-export default function App({ Component, pageProps }: AppProps) {
+export default function App({ Component, pageProps, router }: AppProps) {
   localforage.config({ name: 'Tone Shell' })
 
   const user = useUserStore()
   const styles = useStyleStore()
-  const searchParams = useSearchParams()
-
-  const appDebug = debug(searchParams as any)
 
   useColorWatcher()
 
@@ -27,7 +23,13 @@ export default function App({ Component, pageProps }: AppProps) {
     loadGlobalColors()
   }, [])
 
-  pageProps = { ...pageProps, useUserStore, useStyleStore, appDebug }
+  const searchParams = router.query
+
+  useEffect(() => {
+    loadDebug()
+  }, [searchParams])
+
+  pageProps = { ...pageProps, useUserStore, useStyleStore }
 
   return (
     <>
@@ -39,7 +41,7 @@ export default function App({ Component, pageProps }: AppProps) {
       </Head>
       <Providers>
         <div className="min-h-screen h-full w-full flex flex-col">
-          <NavMenu user={user} />
+          {<NavMenu user={user} />}
           <Component {...pageProps} />
         </div>
       </Providers>
@@ -56,7 +58,9 @@ export default function App({ Component, pageProps }: AppProps) {
     }, [styles])
 
     useEffect(() => {
-      useStyleStore.setState({ user: user.colors })
+      useStyleStore.setState({
+        user: user.colors || [styles.global[0], styles.global[1]],
+      })
     }, [user.colors])
   }
 
@@ -65,5 +69,17 @@ export default function App({ Component, pageProps }: AppProps) {
     const colorSecondary = getRandomAAColor(colorPrimary)
 
     useStyleStore.setState({ global: [colorPrimary, colorSecondary] })
+  }
+
+  async function loadDebug() {
+    if (searchParams.debug) {
+      win.__TONE_DEBUG__ = {
+        api: searchParams.api,
+        isDebug: searchParams.debug == 'true',
+        env: searchParams.env,
+      }
+
+      console.log('Debug environment initialized.')
+    }
   }
 }
