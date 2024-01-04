@@ -73,12 +73,10 @@ export default function App({ Component, pageProps, router }: AppProps) {
   }
 
   async function loadGlobalColors() {
-    if (!styles.global) {
-      const colorPrimary = randomColor()
-      const colorSecondary = getRandomAAColor(colorPrimary)
+    const colorPrimary = randomColor()
+    const colorSecondary = getRandomAAColor(colorPrimary)
 
-      useStyleStore.setState({ global: [colorPrimary, colorSecondary] })
-    }
+    useStyleStore.setState({ global: [colorPrimary, colorSecondary] })
   }
 
   async function loadDebug() {
