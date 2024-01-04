@@ -2,6 +2,7 @@ import Providers from '@/components/Providers'
 import ToneCSSUtils from '@/utils/css'
 import { win } from '@sone-dao/sone-react-utils'
 import NavMenu from '@sone-dao/tone-react-nav-menu'
+import usePlayerStore from '@sone-dao/tone-react-player-store'
 import useStyleStore from '@sone-dao/tone-react-style-store'
 import useUserStore from '@sone-dao/tone-react-user-store'
 import { getRandomAAColor, randomColor } from 'accessible-colors'
@@ -16,6 +17,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
 
   const user = useUserStore()
   const styles = useStyleStore()
+  const player = usePlayerStore()
 
   useColorWatcher()
 
@@ -29,7 +31,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
     loadDebug()
   }, [searchParams])
 
-  pageProps = { ...pageProps, useUserStore, useStyleStore }
+  pageProps = { ...pageProps, useUserStore, useStyleStore, usePlayerStore }
 
   return (
     <>
@@ -37,10 +39,9 @@ export default function App({ Component, pageProps, router }: AppProps) {
         <meta charSet="UTF-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Tone</title>
       </Head>
       <Providers>
-        <div className="max-h-screen h-screen w-full flex flex-col overflow-hidden">
+        <div className="max-h-screen h-screen w-full flex flex-col overflow-y-hidden">
           <NavMenu user={user} />
           <Component {...pageProps} />
         </div>
@@ -55,6 +56,13 @@ export default function App({ Component, pageProps, router }: AppProps) {
 
       if (styles.user[0] && styles.user[1])
         ToneCSSUtils.setColors('user', styles.user[0], styles.user[1])
+
+      if (styles.uploader[0] && styles.uploader[1])
+        ToneCSSUtils.setColors(
+          'uploader',
+          styles.uploader[0],
+          styles.uploader[1]
+        )
     }, [styles])
 
     useEffect(() => {
@@ -65,10 +73,12 @@ export default function App({ Component, pageProps, router }: AppProps) {
   }
 
   async function loadGlobalColors() {
-    const colorPrimary = randomColor()
-    const colorSecondary = getRandomAAColor(colorPrimary)
+    if (!styles.global) {
+      const colorPrimary = randomColor()
+      const colorSecondary = getRandomAAColor(colorPrimary)
 
-    useStyleStore.setState({ global: [colorPrimary, colorSecondary] })
+      useStyleStore.setState({ global: [colorPrimary, colorSecondary] })
+    }
   }
 
   async function loadDebug() {

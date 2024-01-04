@@ -19,6 +19,14 @@
     @apply bg-[var(--user-darker)] dark:bg-[var(--user-lighter)];
   }
 
+  .bg-uploader {
+    @apply bg-[var(--uploader-lighter)] dark:bg-[var(--uploader-darker)];
+  }
+
+  .bg-uploader-flipped {
+    @apply bg-[var(--uploader-darker)] dark:bg-[var(--uploader-lighter)];
+  }
+
   .text-global {
     @apply text-[var(--global-darker)] dark:text-[var(--global-lighter)];
   }
@@ -35,6 +43,14 @@
     @apply text-[var(--user-lighter)] dark:text-[var(--user-darker)];
   }
 
+  .text-uploader {
+    @apply text-[var(--user-darker)] dark:text-[var(--user-lighter)];
+  }
+
+  .text-uploader-flipped {
+    @apply text-[var(--uploader-lighter)] dark:text-[var(--uploader-darker)];
+  }
+
   .border-global {
     @apply border-[var(--global-darker)] dark:border-[var(--global-lighter)];
   }
@@ -49,5 +65,13 @@
 
   .border-user-flipped {
     @apply border-[var(--user-lighter)] dark:border-[var(--user-darker)];
+  }
+
+  .border-uploader {
+    @apply border-[var(--uploader-darker)] dark:border-[var(--user-lighter)];
+  }
+
+  .border-uploader-flipped {
+    @apply border-[var(--uploader-lighter)] dark:border-[var(--uploader-darker)];
   }
 }
