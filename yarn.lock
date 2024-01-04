@@ -1896,6 +1896,15 @@
   resolved "https://registry.yarnpkg.com/@sone-dao/sone-react-utils/-/sone-react-utils-1.0.1.tgz#81da4c7e8c83115b66e4b4b875f6e77554770328"
   integrity sha512-48hho0n41lqMY5NByAqnMPy11vVN5xXOYwTapdOvgRHVtVZVboA5U/zRJcLEzbvTN/P8w6gzCuqXfgh/xyTHiA==
 
+"@sone-dao/tone-react-api@2.6.0", "@sone-dao/tone-react-api@^2.6.0":
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/@sone-dao/tone-react-api/-/tone-react-api-2.6.0.tgz#ca92e29d446bb767eb0e49d8b20d1946ce899ce0"
+  integrity sha512-d2dXLLeFJgC/MJ6/Txcxn5QH8wV9xYdyetI2OlKBl/7vo2DCkRQeCJtsAio+uZRCupvBMYJ+PXt4+rbIIXCkPA==
+  dependencies:
+    "@sone-dao/sone-react-utils" "^1.0.1"
+    axios "^1.4.0"
+    cookies-next "^4.1.0"
+
 "@sone-dao/tone-react-api@^2.4.0":
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/@sone-dao/tone-react-api/-/tone-react-api-2.4.0.tgz#3f43fafef1ccf53cac083b9f628059322cbf8043"
@@ -1905,19 +1914,20 @@
     axios "^1.4.0"
     cookies-next "^4.1.0"
 
-"@sone-dao/tone-react-api@^2.6.0":
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/@sone-dao/tone-react-api/-/tone-react-api-2.6.0.tgz#ca92e29d446bb767eb0e49d8b20d1946ce899ce0"
-  integrity sha512-d2dXLLeFJgC/MJ6/Txcxn5QH8wV9xYdyetI2OlKBl/7vo2DCkRQeCJtsAio+uZRCupvBMYJ+PXt4+rbIIXCkPA==
-  dependencies:
-    "@sone-dao/sone-react-utils" "^1.0.1"
-    axios "^1.4.0"
-    cookies-next "^4.1.0"
-
 "@sone-dao/tone-react-core-ui@2.7.0":
   version "2.7.0"
   resolved "https://registry.yarnpkg.com/@sone-dao/tone-react-core-ui/-/tone-react-core-ui-2.7.0.tgz#ed2b7164928b6a4f54114e13626b19dd3645a42b"
   integrity sha512-Hd8hcV1TmgNnxq2ksgk0XKVlrnUJP4ktsOfHXY6al7x1uGG9Rg25T5tAJPwwUckd7KsZRPEke1ir6kDFu5qkOw==
+  dependencies:
+    "@nextui-org/react" "^2.2.9"
+    "@sone-dao/sone-react-utils" "^1.0.1"
+    framer-motion "^10.16.5"
+    react-slider "^2.0.6"
+
+"@sone-dao/tone-react-core-ui@2.9.0":
+  version "2.9.0"
+  resolved "https://registry.yarnpkg.com/@sone-dao/tone-react-core-ui/-/tone-react-core-ui-2.9.0.tgz#841ac41461908d4858136041133bb2807649e270"
+  integrity sha512-q+vIcNse+Q5Ap23nqFaKyA1dBX1D8gt74BROVnjmhegIF6WM+matPUkSFTdX5axCT1UuqjTU7PztukQN8gk+OQ==
   dependencies:
     "@nextui-org/react" "^2.2.9"
     "@sone-dao/sone-react-utils" "^1.0.1"
@@ -1968,6 +1978,17 @@
     "@sone-dao/tone-react-core-ui" "^2.2.0"
     framer-motion "^10.16.4"
 
+"@sone-dao/tone-react-page-login@^0.5.0":
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/@sone-dao/tone-react-page-login/-/tone-react-page-login-0.5.0.tgz#3b2091376470d395b8a3b0487a003eb0e4f021d8"
+  integrity sha512-zpnNsoC4F9gAvfzdadOBIaOAbAhQS2gZwzAplcj9ahz2gTyTC9vDHTiV/hCV7eXQw7LWdRHon17nteQm9zafAQ==
+  dependencies:
+    "@sone-dao/tone-react-api" "2.6.0"
+    "@sone-dao/tone-react-core-ui" "2.9.0"
+    "@sone-dao/tone-react-style-store" "0.1.0"
+    "@sone-dao/tone-react-user-store" "0.3.0"
+    usehooks-ts "^2.9.1"
+
 "@sone-dao/tone-react-page-signout@^0.5.0":
   version "0.5.0"
   resolved "https://registry.yarnpkg.com/@sone-dao/tone-react-page-signout/-/tone-react-page-signout-0.5.0.tgz#7c811f3f4a5b2f8803d5ca6d5c8b10aba48ef5ae"
@@ -1994,25 +2015,25 @@
     accessible-colors "^1.0.5"
     usehooks-ts "^2.9.1"
 
-"@sone-dao/tone-react-style-store@^0.1.0":
+"@sone-dao/tone-react-style-store@0.1.0", "@sone-dao/tone-react-style-store@^0.1.0":
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/@sone-dao/tone-react-style-store/-/tone-react-style-store-0.1.0.tgz#0433fa5c175ba5f1533dc1fc49c876b88a42b6b9"
   integrity sha512-P+QFhvQmpv691z/QQ0sd0NVG8fwFVMT3JyqB6L6rZTcFPbBa8ebV4hTLK2eWhJrL0kZNqPM0gR6TfH+o1o3+Hw==
   dependencies:
     zustand "^4.4.7"
 
-"@sone-dao/tone-react-user-store@^0.2.0":
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/@sone-dao/tone-react-user-store/-/tone-react-user-store-0.2.0.tgz#c5b28905733e0a993cb30e0fbac1aaeafe53d93d"
-  integrity sha512-3cLDl6Uuh1teteMyE/PDNgSvioLwRHyoA/3A1i8H64IZGdKrovHe/TH3wR/akUiG5IF1WkzxZghUQqXTA/PIwA==
+"@sone-dao/tone-react-user-store@0.3.0", "@sone-dao/tone-react-user-store@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@sone-dao/tone-react-user-store/-/tone-react-user-store-0.3.0.tgz#99eab4480d4008a78b2a49202350915f6ecfc0e0"
+  integrity sha512-ugkPGl3n1lfi8P17sI9+JotMH8kqVYPQyizY5rjZIO89y88daoJQDYZgi+MJ3uhaXutXg6UU5dL7uAwd8PSBRQ==
   dependencies:
     localforage "^1.10.0"
     zustand "^4.4.7"
 
-"@sone-dao/tone-react-user-store@^0.3.0":
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/@sone-dao/tone-react-user-store/-/tone-react-user-store-0.3.0.tgz#99eab4480d4008a78b2a49202350915f6ecfc0e0"
-  integrity sha512-ugkPGl3n1lfi8P17sI9+JotMH8kqVYPQyizY5rjZIO89y88daoJQDYZgi+MJ3uhaXutXg6UU5dL7uAwd8PSBRQ==
+"@sone-dao/tone-react-user-store@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@sone-dao/tone-react-user-store/-/tone-react-user-store-0.2.0.tgz#c5b28905733e0a993cb30e0fbac1aaeafe53d93d"
+  integrity sha512-3cLDl6Uuh1teteMyE/PDNgSvioLwRHyoA/3A1i8H64IZGdKrovHe/TH3wR/akUiG5IF1WkzxZghUQqXTA/PIwA==
   dependencies:
     localforage "^1.10.0"
     zustand "^4.4.7"
