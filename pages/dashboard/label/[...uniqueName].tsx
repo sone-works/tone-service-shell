@@ -1,4 +1,4 @@
-import DashboardLabelPage from '@sone-dao/tone-react-page-dashboard-label'
+/*import DashboardLabelPage from '@sone-dao/tone-react-page-dashboard-label'
 import { getCookie } from 'cookies-next'
 import { GetServerSidePropsContext, GetServerSidePropsResult } from 'next'
 
@@ -45,4 +45,8 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
   }).catch((error) => error)
 }
 
-export default DashboardLabelPage
+export default DashboardLabelPage*/
+
+export default function DashboardLabelPage() {
+  return <div>Dashboard</div>
+}

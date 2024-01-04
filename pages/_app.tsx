@@ -67,7 +67,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
 
     useEffect(() => {
       useStyleStore.setState({
-        user: user.colors || [styles.global[0], styles.global[1]],
+        user: (user.colors || [styles.global[0], styles.global[1]]) as any,
       })
     }, [user.colors])
   }
