@@ -2,7 +2,7 @@ import Providers from '@/components/Providers'
 import ToneCSSUtils from '@/utils/css'
 import { win } from '@sone-dao/sone-react-utils'
 import NavMenu from '@sone-dao/tone-react-nav-menu'
-import usePlayerStore from '@sone-dao/tone-react-player-store'
+//import usePlayerStore from '@sone-dao/tone-react-player-store'
 import useStyleStore from '@sone-dao/tone-react-style-store'
 import useUserStore from '@sone-dao/tone-react-user-store'
 import { getRandomAAColor, randomColor } from 'accessible-colors'
@@ -17,7 +17,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
 
   const user = useUserStore()
   const styles = useStyleStore()
-  const player = usePlayerStore()
+  //const player = usePlayerStore()
 
   useColorWatcher()
 
@@ -31,7 +31,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
     loadDebug()
   }, [searchParams])
 
-  pageProps = { ...pageProps, useUserStore, useStyleStore, usePlayerStore }
+  pageProps = { ...pageProps, useUserStore, useStyleStore }
 
   return (
     <>
