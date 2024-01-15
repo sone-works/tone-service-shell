@@ -16,13 +16,18 @@ export default function App({ Component, pageProps, router }: AppProps) {
   localforage.config({ name: 'Tone Shell' })
 
   const user = useUserStore()
-  const styles = useStyleStore()
   //const player = usePlayerStore()
 
-  useColorWatcher()
-
   useEffect(() => {
-    loadGlobalColors()
+    const globalDarker = document
+      .querySelector('html')
+      ?.style.getPropertyValue('--global-darker')
+
+    const globalLighter = document
+      .querySelector('html')
+      ?.style.getPropertyValue('--global-lighter')
+
+    if (!globalDarker || !globalLighter) loadGlobalColors()
   }, [])
 
   const searchParams = router.query
@@ -49,34 +54,11 @@ export default function App({ Component, pageProps, router }: AppProps) {
     </>
   )
 
-  async function useColorWatcher() {
-    useEffect(() => {
-      if (styles.global[0] && styles.global[1])
-        ToneCSSUtils.setColors('global', styles.global[0], styles.global[1])
-
-      if (styles.user[0] && styles.user[1])
-        ToneCSSUtils.setColors('user', styles.user[0], styles.user[1])
-
-      if (styles.uploader[0] && styles.uploader[1])
-        ToneCSSUtils.setColors(
-          'uploader',
-          styles.uploader[0],
-          styles.uploader[1]
-        )
-    }, [styles])
-
-    useEffect(() => {
-      useStyleStore.setState({
-        user: (user.colors || [styles.global[0], styles.global[1]]) as any,
-      })
-    }, [user.colors])
-  }
-
   async function loadGlobalColors() {
     const colorPrimary = randomColor()
     const colorSecondary = getRandomAAColor(colorPrimary)
 
-    useStyleStore.setState({ global: [colorPrimary, colorSecondary] })
+    ToneCSSUtils.setColors('global', colorPrimary, colorSecondary)
   }
 
   async function loadDebug() {

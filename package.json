@@ -14,6 +14,7 @@
     "@sone-dao/sone-react-utils": "^1.0.1",
     "@sone-dao/tone-react-debug": "^0.1.0",
     "@sone-dao/tone-react-nav-menu": "^0.10.0",
+    "@sone-dao/tone-react-page-dashboard-label": "^0.1.1",
     "@sone-dao/tone-react-page-home": "latest",
     "@sone-dao/tone-react-page-login": "^0.5.0",
     "@sone-dao/tone-react-page-signout": "^0.5.0",
@@ -35,6 +36,7 @@
     "eslint-config-next": "14.0.3",
     "postcss": "^8",
     "prettier": "^3.1.0",
+    "tailwind-scrollbar": "^3.0.5",
     "tailwindcss": "^3.3.0",
     "typescript": "^5",
     "webpack": "^5.89.0"
