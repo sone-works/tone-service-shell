@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+#__next {
+  @apply h-full;
+}
+
+div[data-overlay-container] {
+  @apply h-full;
+}
+
 @layer components {
   .bg-global {
     @apply bg-[var(--global-lighter)] dark:bg-[var(--global-darker)];
