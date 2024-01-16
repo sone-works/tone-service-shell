@@ -19,7 +19,7 @@ export default function CustomDocument() {
           strategy="beforeInteractive"
         />
       </Head>
-      <body className="flex flex-col bg-global text-global scrollbar-none w-full h-full">
+      <body>
         <Main />
         <NextScript />
       </body>

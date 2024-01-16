@@ -2,12 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-#__next {
-  @apply h-full;
-}
-
+html,
+body,
+#__next,
 div[data-overlay-container] {
-  @apply h-full;
+  @apply h-screen w-screen;
 }
 
 @layer components {
