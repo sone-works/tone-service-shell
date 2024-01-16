@@ -46,10 +46,8 @@ export default function App({ Component, pageProps, router }: AppProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <Providers>
-        <div className="max-h-screen h-screen w-full flex flex-col">
-          <NavMenu user={user} />
-          <Component {...pageProps} />
-        </div>
+        <NavMenu user={user} />
+        <Component {...pageProps} />
       </Providers>
     </>
   )

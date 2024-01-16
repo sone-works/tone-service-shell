@@ -692,7 +692,7 @@
     "@nextui-org/react-rsc-utils" "2.0.10"
     "@nextui-org/shared-utils" "2.0.4"
 
-"@nextui-org/react@^2.1.13", "@nextui-org/react@^2.2.9":
+"@nextui-org/react@^2.2.9":
   version "2.2.9"
   resolved "https://registry.yarnpkg.com/@nextui-org/react/-/react-2.2.9.tgz#aa4e872492a710fdffffd431679e6cbd857d3653"
   integrity sha512-QHkUQTxI9sYoVjrvTpYm5K68pMDRqD13+DVzdsrkJuETGhbvE2c2CCGc4on9EwXC3JsOxuP/OyqaAmOIuHhYkA==
@@ -1924,6 +1924,15 @@
     axios "^1.4.0"
     cookies-next "^4.1.0"
 
+"@sone-dao/tone-react-core-ui@2.6.1":
+  version "2.6.1"
+  resolved "https://registry.yarnpkg.com/@sone-dao/tone-react-core-ui/-/tone-react-core-ui-2.6.1.tgz#88ebcf0d693064db9737a8390fe8e9aff29d1fda"
+  integrity sha512-ZzoUQi3foeMLb1NzlcfPgiWBi8OUcc9xw/jcZIB/R1SagOccmqnW5j0Lut2VOkw3yi7nuKF//VIpTs4JnRkKgw==
+  dependencies:
+    "@nextui-org/react" "^2.2.9"
+    "@sone-dao/sone-react-utils" "^1.0.1"
+    framer-motion "^10.16.5"
+
 "@sone-dao/tone-react-core-ui@2.7.0":
   version "2.7.0"
   resolved "https://registry.yarnpkg.com/@sone-dao/tone-react-core-ui/-/tone-react-core-ui-2.7.0.tgz#ed2b7164928b6a4f54114e13626b19dd3645a42b"
@@ -1964,15 +1973,6 @@
     framer-motion "^10.16.5"
     react-slider "^2.0.6"
 
-"@sone-dao/tone-react-core-ui@^2.2.0":
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/@sone-dao/tone-react-core-ui/-/tone-react-core-ui-2.5.0.tgz#693575daf4c04379bc73eace62120ee5859917df"
-  integrity sha512-CsLHk848USxNPICkLLLKWLeqGUoQI725lwoWPLIA3o7oiB4asO4ERxWrhvn02e3gCiK/fTkd+AB84/L7b43kJg==
-  dependencies:
-    "@nextui-org/react" "^2.2.9"
-    "@sone-dao/sone-react-utils" "^1.0.1"
-    framer-motion "^10.16.5"
-
 "@sone-dao/tone-react-css-utils@^0.1.0":
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/@sone-dao/tone-react-css-utils/-/tone-react-css-utils-0.1.0.tgz#29589ba31a4187c17d09e1da7a55022667972985"
@@ -1994,10 +1994,10 @@
     cookies-next "^4.1.0"
     localforage "^1.10.0"
 
-"@sone-dao/tone-react-page-dashboard-label@^0.1.2":
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/@sone-dao/tone-react-page-dashboard-label/-/tone-react-page-dashboard-label-0.1.2.tgz#c89a82bf63ef1021783b5225fa7377af6a3061a4"
-  integrity sha512-dDqT9dZEdcnqIjmYykNC4PHklXzXrpisFnDXtwl5GYsvjeXQfDzsHFHU3Ka7X/9RMNAekCepeSeK2hf/IFKUQQ==
+"@sone-dao/tone-react-page-dashboard-label@^0.1.3":
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/@sone-dao/tone-react-page-dashboard-label/-/tone-react-page-dashboard-label-0.1.3.tgz#94eed4a0e68394aa4ea3524bf60003e4282fe3c6"
+  integrity sha512-rMrxCmLRXrcTyv4s25zoTqmgrA85RcPhUZrMIwhtJcqMBkVPDQxpvEhKs+CSZ4c4PAvsD17VyspdHB4ng9EpOg==
   dependencies:
     "@sone-dao/tone-react-api" "^2.8.0"
     "@sone-dao/tone-react-core-ui" "^2.12.0"
@@ -2005,14 +2005,12 @@
     "@sone-dao/tone-react-style-store" "^0.1.0"
     accessible-colors "^1.0.5"
 
-"@sone-dao/tone-react-page-home@latest":
-  version "0.5.1"
-  resolved "https://registry.yarnpkg.com/@sone-dao/tone-react-page-home/-/tone-react-page-home-0.5.1.tgz#e8ff72ea195b9fee6bf685ac8d24634815dd55e7"
-  integrity sha512-NBoDE34rEpqWIn5ERCSaQWgmGXnzgwe3Tt9TvUJcr8l7/Rwl+ymovk8cU8QXeNQqFQz/q5hrHnKK7uNEvkst9g==
+"@sone-dao/tone-react-page-home@^0.7.0":
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/@sone-dao/tone-react-page-home/-/tone-react-page-home-0.7.0.tgz#e4a572363a2c575ab6bfb75c4bc72bf23e7c5fc0"
+  integrity sha512-959wF9QsSm6hOAJ5vIm2r5UpQvBguQU++8gj2OPybTds5CbFFo26Bh2P0Bd5JkwRFb2ZMgH6H+z9OH6tzBYV0A==
   dependencies:
-    "@nextui-org/react" "^2.1.13"
-    "@sone-dao/tone-react-core-ui" "^2.2.0"
-    framer-motion "^10.16.4"
+    "@sone-dao/tone-react-core-ui" "2.6.1"
 
 "@sone-dao/tone-react-page-login@^0.5.0":
   version "0.5.0"
@@ -3324,7 +3322,7 @@ fraction.js@^4.3.6:
   resolved "https://registry.yarnpkg.com/fraction.js/-/fraction.js-4.3.7.tgz#06ca0085157e42fda7f9e726e79fefc4068840f7"
   integrity sha512-ZsDfxO51wGAXREY55a7la9LScWpwv9RxIrYABrlvOFBlH/ShPnrtsXeuUIfXKKOVicNxQ+o8JTbJvjS4M89yew==
 
-framer-motion@^10.16.4, framer-motion@^10.16.5:
+framer-motion@^10.16.5:
   version "10.16.16"
   resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-10.16.16.tgz#a10a03e1190a717109163cfff212a84c8ad11b0c"
   integrity sha512-je6j91rd7NmUX7L1XHouwJ4v3R+SO4umso2LUcgOct3rHZ0PajZ80ETYZTajzEXEl9DlKyzjyt4AvGQ+lrebOw==

@@ -3,7 +3,7 @@ import Script from 'next/script'
 
 export default function CustomDocument() {
   return (
-    <Html>
+    <Html className="w-full h-full">
       <Head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -19,7 +19,7 @@ export default function CustomDocument() {
           strategy="beforeInteractive"
         />
       </Head>
-      <body>
+      <body className="flex flex-col bg-global text-global scrollbar-none w-full h-full">
         <Main />
         <NextScript />
       </body>
