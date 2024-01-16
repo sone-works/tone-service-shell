@@ -9,7 +9,7 @@ export default function Layout({ children, user }: LayoutProps) {
   return (
     <div className="flex flex-col h-full">
       <NavMenu user={user} />
-      {children}
+      <main className="grow">{children}</main>
     </div>
   )
 }
