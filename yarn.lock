@@ -2005,10 +2005,10 @@
     "@sone-dao/tone-react-style-store" "^0.1.0"
     accessible-colors "^1.0.5"
 
-"@sone-dao/tone-react-page-home@^0.7.0":
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/@sone-dao/tone-react-page-home/-/tone-react-page-home-0.7.0.tgz#e4a572363a2c575ab6bfb75c4bc72bf23e7c5fc0"
-  integrity sha512-959wF9QsSm6hOAJ5vIm2r5UpQvBguQU++8gj2OPybTds5CbFFo26Bh2P0Bd5JkwRFb2ZMgH6H+z9OH6tzBYV0A==
+"@sone-dao/tone-react-page-home@^0.7.1":
+  version "0.7.1"
+  resolved "https://registry.yarnpkg.com/@sone-dao/tone-react-page-home/-/tone-react-page-home-0.7.1.tgz#ecef40c4f7795ab1e01730a16f4c8061ac900e88"
+  integrity sha512-EfP6QnScByXf9Fn0yOVM99FlZrqAJRLfxlHJjlZkQsYht5eGWHYmaO3Vpf817dGh+I9j/SQ4n+EMeM7Y0LZUEg==
   dependencies:
     "@sone-dao/tone-react-core-ui" "2.6.1"
 
