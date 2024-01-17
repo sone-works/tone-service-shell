@@ -7,9 +7,9 @@ type LayoutProps = {
 
 export default function Layout({ children, user }: LayoutProps) {
   return (
-    <div className="flex flex-col h-full">
+    <div className="h-full">
       <NavMenu user={user} />
-      <main className="grow">{children}</main>
+      <main className="bg-global h-full">{children}</main>
     </div>
   )
 }

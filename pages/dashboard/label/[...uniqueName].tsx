@@ -24,9 +24,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
       .then((data) => data.user)
       .catch((error) => reject({ props: { canAccess: false } }))
 
-    const label = await fetch(
-      api + '/catalog/entities?uniqueName=' + uniqueName
-    )
+    const label = await fetch(api + '/catalog/entities/' + uniqueName)
       .then((response) => response.json())
       .then((data) => data.entity)
       .catch((error) => reject({ props: { canAccess: false } }))

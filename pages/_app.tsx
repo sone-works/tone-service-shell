@@ -1,8 +1,7 @@
+import Layout from '@/components/Layout'
 import Providers from '@/components/Providers'
 import ToneCSSUtils from '@/utils/css'
 import { win } from '@sone-dao/sone-react-utils'
-//import usePlayerStore from '@sone-dao/tone-react-player-store'
-import Layout from '@/components/Layout'
 import useStyleStore from '@sone-dao/tone-react-style-store'
 import useUserStore from '@sone-dao/tone-react-user-store'
 import { getRandomAAColor, randomColor } from 'accessible-colors'
@@ -10,13 +9,19 @@ import localforage from 'localforage'
 import { AppProps } from 'next/app'
 import Head from 'next/head'
 import { useEffect } from 'react'
+import { useDarkMode } from 'usehooks-ts'
 import './globals.css'
 
 export default function App({ Component, pageProps, router }: AppProps) {
+  const {
+    isDarkMode,
+    enable: enableDarkMode,
+    disable: disableDarkMode,
+  } = useDarkMode()
+
   localforage.config({ name: 'Tone Shell' })
 
   const user = useUserStore()
-  //const player = usePlayerStore()
 
   useEffect(() => {
     const globalDarker = document
@@ -35,6 +40,12 @@ export default function App({ Component, pageProps, router }: AppProps) {
   useEffect(() => {
     loadDebug()
   }, [searchParams])
+
+  useEffect(() => {
+    isDarkMode
+      ? document.querySelector('body')?.classList.add('dark')
+      : document.querySelector('body')?.classList.remove('dark')
+  }, [isDarkMode])
 
   pageProps = { ...pageProps, useUserStore, useStyleStore }
 
@@ -66,6 +77,15 @@ export default function App({ Component, pageProps, router }: AppProps) {
         api: searchParams.api,
         isDebug: searchParams.debug == 'true',
         env: searchParams.env,
+        darkMode: searchParams.darkMode,
+      }
+
+      if (searchParams.darkMode) {
+        searchParams.darkMode == 'true' && enableDarkMode()
+
+        searchParams.darkMode == 'false' && disableDarkMode()
+
+        console.log('Dark Mode set to', searchParams.darkMode)
       }
 
       console.log('Debug environment initialized.')
