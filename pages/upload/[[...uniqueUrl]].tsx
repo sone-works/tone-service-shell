@@ -1,4 +1,3 @@
-import UploadPage from '@sone-dao/tone-react-page-upload'
 import { getCookie } from 'cookies-next'
 import { GetServerSidePropsContext, GetServerSidePropsResult } from 'next'
 
@@ -45,4 +44,6 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
   }).catch((error) => error)
 }
 
-export default UploadPage
+export default function UploadPage() {
+  return <div>Upload Page</div>
+}
