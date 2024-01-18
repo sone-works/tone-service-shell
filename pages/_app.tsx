@@ -1,7 +1,6 @@
-import Layout from '@/components/Layout'
-import Providers from '@/components/Providers'
 import ToneCSSUtils from '@/utils/css'
 import { win } from '@sone-dao/sone-react-utils'
+import NavMenu from '@sone-dao/tone-react-nav-menu'
 import useStyleStore from '@sone-dao/tone-react-style-store'
 import useUserStore from '@sone-dao/tone-react-user-store'
 import { getRandomAAColor, randomColor } from 'accessible-colors'
@@ -56,11 +55,13 @@ export default function App({ Component, pageProps, router }: AppProps) {
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
-      <Providers>
-        <Layout user={user}>
+      <div className="h-full">
+        <NavMenu user={user} />
+        <main className="bg-global h-full">
+          {' '}
           <Component {...pageProps} />
-        </Layout>
-      </Providers>
+        </main>
+      </div>
     </>
   )
 
