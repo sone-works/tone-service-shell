@@ -13,6 +13,7 @@ input::placeholder,
 textarea::placeholder {
   color: var(--placeholder-color);
   opacity: 0.3;
+  z-index: 5;
 }
 
 body {
