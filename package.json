@@ -12,6 +12,7 @@
   "dependencies": {
     "@module-federation/nextjs-mf": "^7.0.8",
     "@sone-dao/sone-react-utils": "^1.0.1",
+    "@sone-dao/tone-react-api": "^2.9.0",
     "@sone-dao/tone-react-core-ui": "2.17.1",
     "@sone-dao/tone-react-debug": "^0.1.0",
     "@sone-dao/tone-react-nav-menu": "^0.10.0",
