@@ -1924,6 +1924,18 @@
     axios "^1.4.0"
     cookies-next "^4.1.0"
 
+"@sone-dao/tone-react-core-ui@2.17.1":
+  version "2.17.1"
+  resolved "https://registry.yarnpkg.com/@sone-dao/tone-react-core-ui/-/tone-react-core-ui-2.17.1.tgz#fe919c74fc9207464081cb4af8a500e2fc4a38d5"
+  integrity sha512-RJ5whnY4GIZZnzoUddIXKs11XnBpwTie+zRj0S9X45GufL08erRFEgkOERgKq3LAIPSWUKcj72YQYg37w9pLZw==
+  dependencies:
+    "@nextui-org/react" "^2.2.9"
+    "@sone-dao/sone-react-utils" "1.0.1"
+    "@sone-dao/tone-react-css-utils" "^0.2.1"
+    framer-motion "^10.16.5"
+    react-slider "^2.0.6"
+    usehooks-ts "^2.9.4"
+
 "@sone-dao/tone-react-core-ui@2.6.1":
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/@sone-dao/tone-react-core-ui/-/tone-react-core-ui-2.6.1.tgz#88ebcf0d693064db9737a8390fe8e9aff29d1fda"
@@ -1942,40 +1954,6 @@
     "@sone-dao/sone-react-utils" "^1.0.1"
     framer-motion "^10.16.5"
     react-slider "^2.0.6"
-
-"@sone-dao/tone-react-core-ui@^2.11.0":
-  version "2.11.0"
-  resolved "https://registry.yarnpkg.com/@sone-dao/tone-react-core-ui/-/tone-react-core-ui-2.11.0.tgz#c1810a8a4c2840b11d0789a224ac4413c2d9f67b"
-  integrity sha512-OjbdxyYngcQg6HcErijA2SlPlh4SPz88TKGOABO3zkZ6pd1vmeD4IgzbCjqiYmdlcCgIcrXR4LeedalTa5SnrA==
-  dependencies:
-    "@nextui-org/react" "^2.2.9"
-    "@sone-dao/sone-react-utils" "^1.0.1"
-    framer-motion "^10.16.5"
-    react-slider "^2.0.6"
-
-"@sone-dao/tone-react-core-ui@^2.16.1":
-  version "2.16.1"
-  resolved "https://registry.yarnpkg.com/@sone-dao/tone-react-core-ui/-/tone-react-core-ui-2.16.1.tgz#b76250f67ee7dbcfe95990d8a17e008e68bd3c0c"
-  integrity sha512-zSCjBNo3CoY1+1UtaMm0BCL134E3etcyBUcUDN5kkPcWwbZJkjSOr9cePz7Mg3SS9+RWmWiNiNDz0TFkP9YVNA==
-  dependencies:
-    "@nextui-org/react" "^2.2.9"
-    "@sone-dao/sone-react-utils" "1.0.1"
-    "@sone-dao/tone-react-css-utils" "^0.2.1"
-    framer-motion "^10.16.5"
-    react-slider "^2.0.6"
-    usehooks-ts "^2.9.4"
-
-"@sone-dao/tone-react-core-ui@^2.17.0":
-  version "2.17.0"
-  resolved "https://registry.yarnpkg.com/@sone-dao/tone-react-core-ui/-/tone-react-core-ui-2.17.0.tgz#5d5ab3e24ef8f7d005c09e0f228ce20e3eb2faf8"
-  integrity sha512-XboqDgEaxwbFquPXho5ljMo1ehLyyw5bdSEWDVSsxcL/8mBMozwmI8JXaus0ieXcYNgch1LsWOZejmyzsc4u7w==
-  dependencies:
-    "@nextui-org/react" "^2.2.9"
-    "@sone-dao/sone-react-utils" "1.0.1"
-    "@sone-dao/tone-react-css-utils" "^0.2.1"
-    framer-motion "^10.16.5"
-    react-slider "^2.0.6"
-    usehooks-ts "^2.9.4"
 
 "@sone-dao/tone-react-css-utils@0.2.1", "@sone-dao/tone-react-css-utils@^0.2.1":
   version "0.2.1"
@@ -1998,13 +1976,12 @@
     cookies-next "^4.1.0"
     localforage "^1.10.0"
 
-"@sone-dao/tone-react-page-dashboard-label@0.4.1":
-  version "0.4.1"
-  resolved "https://registry.yarnpkg.com/@sone-dao/tone-react-page-dashboard-label/-/tone-react-page-dashboard-label-0.4.1.tgz#e6fdbe4fcf4ba42706dfb1d7dd003b65586b3c35"
-  integrity sha512-Cy+XmdkSccMGPkPl/wVoVyYkSXYWq00m902d3znGIX5yozEcGJz3a722/MRA59Rthjcs0YhzIaPSbEzus7YYmA==
+"@sone-dao/tone-react-page-dashboard-label@0.5.0":
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/@sone-dao/tone-react-page-dashboard-label/-/tone-react-page-dashboard-label-0.5.0.tgz#0aa8c1788d41c1914530f678fc15d293cad9ef0f"
+  integrity sha512-qScOnJXHOwQuhpjRG/pmLIZMtS5Uv0XALncqXnWObk7V9Fht/X2LRgPlJh7QNCOL697onjARZComkSOjW4DEuw==
   dependencies:
     "@sone-dao/tone-react-api" "^2.8.0"
-    "@sone-dao/tone-react-core-ui" "^2.17.0"
     "@sone-dao/tone-react-css-utils" "^0.2.1"
     "@sone-dao/tone-react-style-store" "^0.1.0"
     accessible-colors "^1.0.5"
@@ -2017,37 +1994,34 @@
   dependencies:
     "@sone-dao/tone-react-core-ui" "2.6.1"
 
-"@sone-dao/tone-react-page-login@0.8.0":
-  version "0.8.0"
-  resolved "https://registry.yarnpkg.com/@sone-dao/tone-react-page-login/-/tone-react-page-login-0.8.0.tgz#0f516a42cc6d2d36ed562dcebb5b8ea972f73940"
-  integrity sha512-5TF4/NrMV6+EgexVdQPab88uVkUr/EZRGGFwYByoGIq1akJbGUoVA86bc/JJcGaUhesFnMoTbmFSdpl6u+AmQQ==
+"@sone-dao/tone-react-page-login@0.9.0":
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/@sone-dao/tone-react-page-login/-/tone-react-page-login-0.9.0.tgz#14a213803975d002936eb9908a72bb21dbfede55"
+  integrity sha512-MpB5zu++fXHYvEd3wxssv8YVHaF3Ysy+B4eDu396o09E53nvBvKppCVbxd+CO3rqsQQDALEs7HZN3xSPJ+wFyg==
   dependencies:
     "@sone-dao/tone-react-api" "^2.8.0"
-    "@sone-dao/tone-react-core-ui" "^2.16.1"
     "@sone-dao/tone-react-style-store" "0.1.0"
     "@sone-dao/tone-react-user-store" "0.3.0"
     usehooks-ts "^2.9.1"
 
-"@sone-dao/tone-react-page-signout@^0.5.0":
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/@sone-dao/tone-react-page-signout/-/tone-react-page-signout-0.5.0.tgz#7c811f3f4a5b2f8803d5ca6d5c8b10aba48ef5ae"
-  integrity sha512-+zaUOLSpJcNU65LG/1KzmFZawiV8s30aQsPGI5hZkgRCs5FKr3RB5nyr8bQHzo/gXU6FCrL/mfsTpOO+8A3NWg==
+"@sone-dao/tone-react-page-signout@0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@sone-dao/tone-react-page-signout/-/tone-react-page-signout-0.6.0.tgz#930596e4bef3c738aa9bd63ffb1ceea64e8ba941"
+  integrity sha512-Dq0hoO/g0Lo39zioE3i/ii6YLvB3au4j5CrAHtSKs4fTjiIu+oosZATWB85+LbLjKBfjCKPcqy5yoQQ5MyD4TQ==
   dependencies:
     "@sone-dao/tone-react-api" "^2.4.0"
-    "@sone-dao/tone-react-core-ui" "^2.11.0"
     "@sone-dao/tone-react-user-store" "^0.3.0"
     cookies-next "^4.1.0"
     usehooks-ts "^2.9.1"
 
-"@sone-dao/tone-react-page-signup@1.11.0":
-  version "1.11.0"
-  resolved "https://registry.yarnpkg.com/@sone-dao/tone-react-page-signup/-/tone-react-page-signup-1.11.0.tgz#76fb28e450ad9a2b43293926df104e0c0eac6416"
-  integrity sha512-K8RrRt31oIwaxb6HTJZer0FafznWZlNSIx9NA0egC5ggB7eIJeHE+6BExXx7yIMWnFsIVflk493T9GLGQlP4XA==
+"@sone-dao/tone-react-page-signup@1.12.0":
+  version "1.12.0"
+  resolved "https://registry.yarnpkg.com/@sone-dao/tone-react-page-signup/-/tone-react-page-signup-1.12.0.tgz#55fbc3b0e92b61a1a0bc68035d6ec506aaafb353"
+  integrity sha512-+L0tvROJxoCPR68PGbrDtdBreVMXy0mLTCZpiWy00b788WNrkKTZrnqPrM8lPHWpYmPQ/WoiO1a9R23bFfr5Og==
   dependencies:
     "@sone-dao/sone-react-placeholder" "2.0.2"
     "@sone-dao/sone-react-utils" "1.0.1"
     "@sone-dao/tone-react-api" "^2.8.0"
-    "@sone-dao/tone-react-core-ui" "^2.16.1"
     "@sone-dao/tone-react-css-utils" "0.2.1"
     "@sone-dao/tone-react-debug" "0.1.0"
     "@sone-dao/tone-react-style-store" "0.1.0"

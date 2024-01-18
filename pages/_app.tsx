@@ -1,7 +1,7 @@
 import ToneCSSUtils from '@/utils/css'
 import { win } from '@sone-dao/sone-react-utils'
+import ToneApiService from '@sone-dao/tone-react-api'
 import NavMenu from '@sone-dao/tone-react-nav-menu'
-import useStyleStore from '@sone-dao/tone-react-style-store'
 import useUserStore from '@sone-dao/tone-react-user-store'
 import { getRandomAAColor, randomColor } from 'accessible-colors'
 import localforage from 'localforage'
@@ -23,15 +23,8 @@ export default function App({ Component, pageProps, router }: AppProps) {
   const user = useUserStore()
 
   useEffect(() => {
-    const globalDarker = document
-      .querySelector('html')
-      ?.style.getPropertyValue('--global-darker')
-
-    const globalLighter = document
-      .querySelector('html')
-      ?.style.getPropertyValue('--global-lighter')
-
-    if (!globalDarker || !globalLighter) loadGlobalColors()
+    checkUserSession()
+    checkForGlobalColors()
   }, [])
 
   const searchParams = router.query
@@ -41,12 +34,12 @@ export default function App({ Component, pageProps, router }: AppProps) {
   }, [searchParams])
 
   useEffect(() => {
-    isDarkMode
-      ? document.querySelector('body')?.classList.add('dark')
-      : document.querySelector('body')?.classList.remove('dark')
+    toggleDarkMode()
   }, [isDarkMode])
 
-  pageProps = { ...pageProps, useUserStore, useStyleStore }
+  const api = new ToneApiService()
+
+  pageProps = { ...pageProps, useUserStore }
 
   return (
     <>
@@ -65,11 +58,44 @@ export default function App({ Component, pageProps, router }: AppProps) {
     </>
   )
 
+  async function checkUserSession() {
+    const userSession = localStorage.getItem('tone.session')
+
+    if (userSession) {
+      api.user
+        .getSelf()
+        .then((response) => {
+          // Set user data here
+        })
+        .catch((error) => {
+          // Clear user data here
+        })
+    }
+  }
+
+  async function checkForGlobalColors() {
+    const globalDarker = document
+      .querySelector('html')
+      ?.style.getPropertyValue('--global-darker')
+
+    const globalLighter = document
+      .querySelector('html')
+      ?.style.getPropertyValue('--global-lighter')
+
+    if (!globalDarker || !globalLighter) loadGlobalColors()
+  }
+
   async function loadGlobalColors() {
     const colorPrimary = randomColor()
     const colorSecondary = getRandomAAColor(colorPrimary)
 
-    ToneCSSUtils.setColors('global', colorPrimary, colorSecondary)
+    return ToneCSSUtils.setColors('global', colorPrimary, colorSecondary)
+  }
+
+  function toggleDarkMode() {
+    return isDarkMode
+      ? document.querySelector('body')?.classList.add('dark')
+      : document.querySelector('body')?.classList.remove('dark')
   }
 
   async function loadDebug() {
