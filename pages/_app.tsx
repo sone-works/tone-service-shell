@@ -24,7 +24,10 @@ export default function App({ Component, pageProps, router }: AppProps) {
 
   useEffect(() => {
     checkUserSession()
+
     checkForGlobalColors()
+
+    !isDarkMode ? disableDarkMode() : enableDarkMode()
   }, [])
 
   const searchParams = router.query
@@ -34,7 +37,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
   }, [searchParams])
 
   useEffect(() => {
-    toggleDarkMode()
+    updateDarkMode(isDarkMode)
   }, [isDarkMode])
 
   const api = new ToneApiService()
@@ -48,7 +51,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
-      <div className="h-full">
+      <div className="bg-global text-global h-full">
         <NavMenu user={user} />
         <main className="bg-global h-full">
           {' '}
@@ -64,8 +67,17 @@ export default function App({ Component, pageProps, router }: AppProps) {
     if (userSession) {
       api.user
         .getSelf()
-        .then((response) => {
-          // Set user data here
+        .then((response) => response.user)
+        .then((user) => {
+          console.log({ user })
+
+          ToneCSSUtils.setColors('user', user.colors[0], user.colors[1])
+
+          useUserStore.setState({
+            userId: user.userId,
+            colors: user.colors,
+            display: user.display,
+          })
         })
         .catch((error) => {
           // Clear user data here
@@ -75,11 +87,11 @@ export default function App({ Component, pageProps, router }: AppProps) {
 
   async function checkForGlobalColors() {
     const globalDarker = document
-      .querySelector('html')
+      .querySelector('body')
       ?.style.getPropertyValue('--global-darker')
 
     const globalLighter = document
-      .querySelector('html')
+      .querySelector('body')
       ?.style.getPropertyValue('--global-lighter')
 
     if (!globalDarker || !globalLighter) loadGlobalColors()
@@ -92,7 +104,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
     return ToneCSSUtils.setColors('global', colorPrimary, colorSecondary)
   }
 
-  function toggleDarkMode() {
+  function updateDarkMode(isDarkMode: boolean) {
     return isDarkMode
       ? document.querySelector('body')?.classList.add('dark')
       : document.querySelector('body')?.classList.remove('dark')
