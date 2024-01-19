@@ -1986,10 +1986,10 @@
     cookies-next "^4.1.0"
     localforage "^1.10.0"
 
-"@sone-dao/tone-react-page-dashboard-label@0.6.0":
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/@sone-dao/tone-react-page-dashboard-label/-/tone-react-page-dashboard-label-0.6.0.tgz#ce8d508c59ea28fea045eb2711d3617307f244aa"
-  integrity sha512-fnDW9ZSN5s73ewa9RlWr3b5UHRB+w3CjVMywc3MlkDb/SB9cWdLv6qNpld0PayT+rIUbTJK5hS41uQoQGOqzLA==
+"@sone-dao/tone-react-page-dashboard-label@0.7.0":
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/@sone-dao/tone-react-page-dashboard-label/-/tone-react-page-dashboard-label-0.7.0.tgz#4c162772a2f319704f7dac6510162a47b11f495c"
+  integrity sha512-gGgj+3QaO/YsipDR+Bm0F3LQBkE0+QouK3g5oTALQTvOzgHujcHppXWe+JgcpQdDayn/7oBDpe8lX8hvFvLDQw==
   dependencies:
     "@sone-dao/tone-react-api" "^2.8.0"
     "@sone-dao/tone-react-core-ui" "^2.17.2"

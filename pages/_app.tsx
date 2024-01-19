@@ -1,6 +1,6 @@
-import ToneCSSUtils from '@/utils/css'
 import { win } from '@sone-dao/sone-react-utils'
 import ToneApiService from '@sone-dao/tone-react-api'
+import ToneCSSUtils from '@sone-dao/tone-react-css-utils'
 import NavMenu from '@sone-dao/tone-react-nav-menu'
 import useUserStore from '@sone-dao/tone-react-user-store'
 import { getRandomAAColor, randomColor } from 'accessible-colors'
@@ -25,7 +25,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
   useEffect(() => {
     checkUserSession()
 
-    checkForGlobalColors()
+    loadGlobalColors()
 
     !isDarkMode ? disableDarkMode() : enableDarkMode()
   }, [])
@@ -85,23 +85,16 @@ export default function App({ Component, pageProps, router }: AppProps) {
     }
   }
 
-  async function checkForGlobalColors() {
-    const globalDarker = document
-      .querySelector('body')
-      ?.style.getPropertyValue('--global-darker')
-
-    const globalLighter = document
-      .querySelector('body')
-      ?.style.getPropertyValue('--global-lighter')
-
-    if (!globalDarker || !globalLighter) loadGlobalColors()
-  }
-
   async function loadGlobalColors() {
-    const colorPrimary = randomColor()
-    const colorSecondary = getRandomAAColor(colorPrimary)
+    const colorsGlobal = ToneCSSUtils.getColors('global')
 
-    return ToneCSSUtils.setColors('global', colorPrimary, colorSecondary)
+    if (!colorsGlobal.darker || !colorsGlobal.lighter) {
+      const colorPrimary = randomColor()
+
+      const colorSecondary = getRandomAAColor(colorPrimary)
+
+      ToneCSSUtils.setColors('global', colorPrimary, colorSecondary)
+    }
   }
 
   function updateDarkMode(isDarkMode: boolean) {
