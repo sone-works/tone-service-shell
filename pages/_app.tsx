@@ -4,6 +4,7 @@ import ToneCSSUtils from '@sone-dao/tone-react-css-utils'
 import NavMenu from '@sone-dao/tone-react-nav-menu'
 import useUserStore from '@sone-dao/tone-react-user-store'
 import { getRandomAAColor, randomColor } from 'accessible-colors'
+import { setCookie } from 'cookies-next'
 import localforage from 'localforage'
 import { AppProps } from 'next/app'
 import Head from 'next/head'
@@ -70,6 +71,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
         .then((response) => response.user)
         .then((user) => {
           console.log({ user })
+          setCookie('tone.session', userSession)
 
           ToneCSSUtils.setColors('user', user.colors[0], user.colors[1])
 
