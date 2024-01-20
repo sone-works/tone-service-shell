@@ -1,3 +1,4 @@
+import UploadPage from '@sone-dao/tone-react-page-upload'
 import { getCookie } from 'cookies-next'
 import { GetServerSidePropsContext, GetServerSidePropsResult } from 'next'
 
@@ -26,6 +27,22 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
       .then(async (user) => {
         if (!user) return reject({ props: { canAccess: false } })
 
+        const canActAs = user.canActAs || []
+
+        const canUploadAs: string[] = []
+
+        Object.keys(canActAs).map((entityId) => {
+          const userAccess = canActAs[entityId]
+
+          if (
+            userAccess &&
+            (userAccess.includes('owner') ||
+              userAccess.includes('upload') ||
+              userAccess.includes('custodial-upload'))
+          )
+            canUploadAs.push(entityId)
+        })
+
         if (uniqueUrl) {
           return await fetch(api + '/catalog/entities/' + uniqueUrl)
             .then((response) => response.json())
@@ -37,13 +54,11 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
         }
 
         return resolve({
-          props: { canAccess: true, user },
+          props: { canAccess: true, user, canUploadAs },
         })
       })
       .catch((error) => reject({ props: { canAccess: false } }))
   }).catch((error) => error)
 }
 
-export default function UploadPage() {
-  return <div>Upload Page</div>
-}
+export default UploadPage

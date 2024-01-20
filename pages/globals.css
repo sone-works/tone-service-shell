@@ -9,13 +9,6 @@ div[data-overlay-container] {
   @apply h-full w-full;
 }
 
-input::placeholder,
-textarea::placeholder {
-  color: var(--placeholder-color);
-  opacity: 0.3;
-  z-index: 5;
-}
-
 body {
   @apply bg-[var(--global-lighter)] dark:bg-[var(--global-darker)] text-[var(--global-darker)] dark:text-[var(--global-lighter)] scrollbar-none;
 }
