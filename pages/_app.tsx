@@ -53,7 +53,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <div className="bg-global text-global h-full">
-        <NavMenu />
+        <NavMenu user={user} />
         <main className="bg-global h-full">
           <Component {...pageProps} />
         </main>
