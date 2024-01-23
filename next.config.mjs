@@ -7,15 +7,12 @@ export default async () => {
 
   return {
     webpack: (config, { isServer }) => {
+      // NextFederationPlugin conveniently shares required modules
+
       config.plugins.push(
         new NextFederationPlugin({
           name: 'tone-shell',
           filename: 'static/chunks/remoteEntry.js',
-          remotes: {
-            /*bucket: `bucket@http://localhost:3000/_next/static/${
-              isServer ? 'ssr' : 'chunks'
-            }/remoteEntry.js`,*/
-          },
         })
       )
 

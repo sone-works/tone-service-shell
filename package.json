@@ -21,7 +21,7 @@
     "@sone-dao/tone-react-page-login": "0.13.0",
     "@sone-dao/tone-react-page-signout": "0.6.0",
     "@sone-dao/tone-react-page-signup": "1.13.0",
-    "@sone-dao/tone-react-page-upload": "0.15.0",
+    "@sone-dao/tone-react-page-upload": "^0.16.0",
     "@sone-dao/tone-react-user-store": "^0.4.0",
     "accessible-colors": "^1.0.5",
     "cookies-next": "^4.1.0",
